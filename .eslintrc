@@ -1,0 +1,16 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "esnext": true,
+        "node": true
+    },
+    "extends": ["@vue/eslint-config-typescript", "plugin:prettier/recommended"],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "parser": "@typescript-eslint/parser",
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "vue"],
+    "rules": {}
+}

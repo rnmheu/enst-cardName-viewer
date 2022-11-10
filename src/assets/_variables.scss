@@ -1,0 +1,101 @@
+// variables
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@700&display=swap');
+
+:root {
+    --dark-100: #08121a;
+    --dark-alpha-90: rgba(8, 18, 26, 0.9);
+    --dark-alpha-80: rgba(8, 18, 26, 0.8);
+    --dark-alpha-70: rgba(8, 18, 26, 0.7);
+    --dark-alpha-60: rgba(8, 18, 26, 0.6);
+    --dark-alpha-50: rgba(8, 18, 26, 0.5);
+    --dark-alpha-40: rgba(8, 18, 26, 0.4);
+    --dark-alpha-30: rgba(8, 18, 26, 0.1);
+    --dark-alpha-20: rgba(8, 18, 26, 0.08);
+    --dark-alpha-10: rgba(8, 18, 26, 0.03);
+    --dark-90: #2a323a;
+    --dark-80: #475059;
+    --dark-70: #5a626c;
+    --dark-60: #818a94;
+    --dark-50: #a2abb5;
+    --dark-40: #c6d0db;
+    --dark-30: #d9e2ed;
+    --dark-20: #e5effa;
+    --dark-10: #eef8ff;
+
+    --white-alpha-90: rgba(255, 255, 255, 0.9);
+    --white-alpha-80: rgba(255, 255, 255, 0.8);
+    --white-alpha-70: rgba(255, 255, 255, 0.7);
+    --white-alpha-60: rgba(255, 255, 255, 0.6);
+    --white-alpha-50: rgba(255, 255, 255, 0.5);
+    --white-alpha-40: rgba(255, 255, 255, 0.4);
+    --white-alpha-30: rgba(255, 255, 255, 0.1);
+    --white-alpha-20: rgba(255, 255, 255, 0.08);
+    --white-alpha-10: rgba(255, 255, 255, 0.03);
+
+    --primary-100: #b81416;
+    --primary-90: #c72223;
+    --primary-80: #d42a2a;
+    --primary-70: #e63530;
+    --primary-60: #f53f30;
+    --primary-50: #f0504c;
+    --primary-40: #e67170;
+    --primary-30: #f09998;
+    --primary-20: #ffccd1;
+    --primary-10: #ffebee;
+
+    --bg-color: white;
+
+    --surface-primary: var(--dark-alpha-10);
+    --surface-secondary: var(--white-alpha-20);
+    --surface-tertiary: var(--white-alpha-30);
+
+    --text-high-emphasis: var(--dark-100);
+    --text-mid-emphasis: var(--dark-alpha-90);
+    --text-low-emphasis: var(--dark-alpha-60);
+    --text-disable: var(--white-alpha-60);
+    --text-accent: var(--primary-100);
+
+    --border-high-emphasis: var(--dark-alpha-10);
+    --border-mid-emphasis: var(--dark-alpha-10);
+
+    // layout, block
+    --ratio: 1.7;
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+
+    // inline
+    --r-3: calc(var(--r-2) / var(--ratio));
+    --r-2: calc(var(--r-1) / var(--ratio));
+    --r-1: calc(var(--r0) / var(--ratio));
+    --r0: 1em;
+    --r1: calc(var(--r0) * var(--ratio));
+
+    --fontSize-smaller: 0.82rem;
+    --fontSize-small: 0.9rem;
+    --fontSize-medium: 1.25rem;
+    --fontSize-large: 1.5rem;
+
+    --fontFamily--emphasis: 'IBM Plex Sans JP', sans-serif;
+}
+
+$animation_hover-slow: ease-in 0.3s;
+$animation_hover-default: ease-in 0.15s;
+
+$gap-size--sm: 8px;
+$gap-size--md: 16px; // default
+$gap-size--lg: 32px;
+$gap-size--xl: 64px;
+
+/////////////
+// F O N T //
+/////////////
+$font-size--sm: 0.9rem;
+$font-size--md: 1rem; // default
+
+$font-weight--light: 300;
+$font-weight--default: 400;
+$font-weight--bold: 700;
+$font-weight--heavy: 900;
