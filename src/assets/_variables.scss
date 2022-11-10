@@ -1,5 +1,4 @@
 // variables
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@700&display=swap');
 
 :root {
     --dark-100: #08121a;
@@ -9,10 +8,10 @@
     --dark-alpha-60: rgba(8, 18, 26, 0.6);
     --dark-alpha-50: rgba(8, 18, 26, 0.5);
     --dark-alpha-40: rgba(8, 18, 26, 0.4);
-    --dark-alpha-30: rgba(8, 18, 26, 0.1);
+    --dark-alpha-30: rgba(8, 18, 26, 0.15);
     --dark-alpha-20: rgba(8, 18, 26, 0.08);
     --dark-alpha-10: rgba(8, 18, 26, 0.03);
-    --dark-90: #2a323a;
+    --dark-90: #1f252b;
     --dark-80: #475059;
     --dark-70: #5a626c;
     --dark-60: #818a94;
@@ -78,7 +77,7 @@
     --fontSize-medium: 1.25rem;
     --fontSize-large: 1.5rem;
 
-    --fontFamily--emphasis: 'IBM Plex Sans JP', sans-serif;
+    --fontFamily--emphasis: 'Open Sans', 'IBM Plex Sans JP', sans-serif;
 }
 
 $animation_hover-slow: ease-in 0.3s;

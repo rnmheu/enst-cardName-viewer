@@ -5,8 +5,8 @@ interface CardData {
     id?: number
     rarity?: number
     character_id?: number
-    type?: number
-    substat_type?: number
+    type: number
+    substat_type: number
     title?: string
     name?: string
     releaseDate?: { jp?: Date; en?: Date }
@@ -53,7 +53,15 @@ defineProps<CardData>()
 </script>
 
 <template>
-    <div class="box">
+    <div
+        class="box"
+        :class="{
+            'box-bg--da': (type / 10) * 10 === 1,
+            'box-bg--vo': (type / 10) * 10 === 2,
+            'box-bg--gl': (type / 10) * 10 === 3,
+            'box-bg--pf': (type / 10) * 10 === 4,
+        }"
+    >
         <LayoutStack small>
             <div class="title">{{ title }}</div>
             <div>
@@ -73,7 +81,6 @@ defineProps<CardData>()
 
 <style scoped lang="scss">
 .box {
-    box-sizing: border-box;
     padding: var(--box-y-space, var(--s1)) var(--box-x-space, var(--s0));
 
     --box-y-space: var(--s1);
@@ -82,11 +89,26 @@ defineProps<CardData>()
     margin-right: 0;
     margin-left: 0;
 
-    background-color: var(--surface-primary);
-    border-color: var(--border-mid-emphasis);
-    border-style: solid;
-    border-width: 1px;
+    color: var(--white-alpha-90);
+    background: var(--border-color, white);
+    border: 1px var(--white-alpha-80) solid;
     border-radius: 0.5rem;
+    box-shadow: 0 0 8px 2px var(--dark-alpha-30);
+}
+
+.box-bg--da {
+    --border-color: linear-gradient(-225deg, #f77062 0%, #ec345c 100%);
+}
+
+.box-bg--vo {
+    --border-color: linear-gradient(-225deg, #00b5ec 0%, #165fbe 100%);
+}
+.box-bg--gl {
+    --border-color: linear-gradient(-225deg, #00ca9e 0%, #0fbd0f 100%);
+}
+
+.box-bg--pf {
+    --border-color: linear-gradient(-225deg, #f9b523 0%, #ec7c3b 100%);
 }
 
 .title {
