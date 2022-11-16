@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;400;700&display=swap');
+
 * {
     max-width: 40em;
     box-sizing: border-box;
@@ -93,13 +94,17 @@ button {
     }
 }
 
-// element styles
+// material-icons
 
-.list--noneListStyle {
-    padding: 0;
-    list-style: none;
-    ~ li,
-    ul ~ li {
-        list-style: none;
-    }
+.material-icons.md-1rem {
+    font-size: 1em;
+}
+.material-icons.md-mid-emphasis {
+    color: var(--text-mid-emphasis);
+}
+.material-icons.md-low-emphasis {
+    color: var(--text-low-emphasis);
+}
+.material-icons.md-18 {
+    font-size: 18px;
 }

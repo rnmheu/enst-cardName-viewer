@@ -42,17 +42,19 @@
     --primary-20: #ffccd1;
     --primary-10: #ffebee;
 
-    --bg-color: white;
+    --bg-color: var(--dark-alpha-10);
 
-    --surface-primary: var(--dark-alpha-10);
-    --surface-secondary: var(--white-alpha-20);
-    --surface-tertiary: var(--white-alpha-30);
+    --surface-primary: var(--white-alpha-90);
+    --surface-secondary: var(--dark-alpha-20);
+    --surface-tertiary: var(--dark-alpha-30);
 
     --text-high-emphasis: var(--dark-100);
-    --text-mid-emphasis: var(--dark-alpha-90);
-    --text-low-emphasis: var(--dark-alpha-60);
+    --text-mid-emphasis: var(--dark-alpha-80);
+    --text-low-emphasis: var(--dark-alpha-70);
     --text-disable: var(--white-alpha-60);
     --text-accent: var(--primary-100);
+
+    --text-mid-emphasis--bg-dark: var(--white-alpha-90);
 
     --border-high-emphasis: var(--dark-alpha-10);
     --border-mid-emphasis: var(--dark-alpha-10);
@@ -77,7 +79,7 @@
     --fontSize-medium: 1.25rem;
     --fontSize-large: 1.5rem;
 
-    --fontFamily--emphasis: 'Open Sans', 'IBM Plex Sans JP', sans-serif;
+    // --fontFamily--emphasis: 'Open Sans', 'IBM Plex Sans JP', sans-serif;
 }
 
 $animation_hover-slow: ease-in 0.3s;
@@ -94,7 +96,7 @@ $gap-size--xl: 64px;
 $font-size--sm: 0.9rem;
 $font-size--md: 1rem; // default
 
-$font-weight--light: 300;
+$font-weight--light: 200;
 $font-weight--default: 400;
 $font-weight--bold: 700;
 $font-weight--heavy: 900;
