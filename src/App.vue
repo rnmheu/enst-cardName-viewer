@@ -6,7 +6,12 @@ import LayoutStack from '@/components/Layout/LayoutStack.vue'
 import LayoutCluster from '@/components/Layout/LayoutCluster.vue'
 
 import { CharactersStore, CharactersKey } from '@/stores/charactersStore'
+import { EventsStore, EventsKey } from '@/stores/eventsStore'
+import { ScoutsStore, ScoutsKey } from '@/stores/scoutsStore'
+
 provide(CharactersKey, CharactersStore())
+provide(EventsKey, EventsStore())
+provide(ScoutsKey, ScoutsStore())
 </script>
 
 <template>

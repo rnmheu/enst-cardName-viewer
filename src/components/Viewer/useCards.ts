@@ -17,7 +17,7 @@ export function useCards() {
         }).then((json) => (data.value = formatCards(json)))
     }
 
-    function filterById(characterId: number) {
+    function filterByCharacterId(characterId: number) {
         if (data.value !== undefined) {
             if (characterId === 0) {
                 return data.value
@@ -29,10 +29,18 @@ export function useCards() {
             }
         }
     }
+    function filterByCardId(cardIds: number[]) {
+        if (data.value === undefined) {
+            return
+        }
+        const list = data.value.filter((card) => cardIds.includes(card.id))
+        return list
+    }
     return {
         pending,
         data,
-        filterById,
+        filterByCharacterId,
+        filterByCardId,
     }
 }
 
