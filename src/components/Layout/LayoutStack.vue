@@ -21,22 +21,20 @@ defineProps<Props>()
 </template>
 
 <style lang="scss">
+.stack,
 .stack > * + * {
     margin-top: var(--stack-space, 1.7rem);
 }
 
-.smaller,
-.smaller > * + * {
+.stack.smaller {
     --stack-space: var(--s-1);
 }
 
-.small,
-.small > * + * {
+.stack.small {
     --stack-space: var(--s0);
 }
 
-.large,
-.large > * + * {
+.stack.large {
     --stack-space: var(--s2);
 }
 </style>

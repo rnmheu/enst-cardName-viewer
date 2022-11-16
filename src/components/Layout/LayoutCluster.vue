@@ -3,6 +3,7 @@ interface Props {
     small?: boolean
     large?: boolean
     reverse?: boolean
+    alignItems?: 'top' | 'center' | 'bottom'
     justifyContent?: 'space-between' | 'left' | 'right'
 }
 defineProps<Props>()
@@ -16,6 +17,7 @@ defineProps<Props>()
                 small: $props.small,
                 large: $props.large,
                 reverse: $props.reverse,
+                alignItems: $props.alignItems !== undefined,
                 justifyContent: $props.justifyContent !== undefined,
             },
         ]"
@@ -49,5 +51,9 @@ defineProps<Props>()
 
 .justifyContent {
     justify-content: v-bind('justifyContent');
+}
+
+.alignItems {
+    align-items: v-bind('alignItems');
 }
 </style>
