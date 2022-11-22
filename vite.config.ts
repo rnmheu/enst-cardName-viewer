@@ -2,8 +2,10 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
+import { ssr } from 'vite-plugin-ssr/plugin'
+
 export default defineConfig({
-    plugins: [vue()],
+    plugins: [vue(), ssr({ prerender: true })],
     css: {
         preprocessorOptions: {
             scss: {

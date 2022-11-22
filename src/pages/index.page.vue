@@ -15,7 +15,7 @@ provide(ScoutsKey, ScoutsStore())
 </script>
 
 <template>
-    <LayoutStack small class="index">
+    <LayoutStack small>
         <LayoutCluster large class="header" :alignItems="'center'">
             <h1 class="app-title">
                 ENSEMBLE STARS !!<br />
@@ -32,9 +32,6 @@ provide(ScoutsKey, ScoutsStore())
     font-family: var(--fontFamily--emphasis);
     font-weight: 700;
     line-height: 1.2em;
-}
-.index {
-    width: min(1260px, 90vw);
 }
 
 .header {

@@ -6,13 +6,14 @@
     "scripts": {
         "dev": "vite",
         "build": "vue-tsc && vite build",
-        "preview": "vite preview",
+        "preview": "vite build && vite preview",
         "lint": "eslint --ext .ts,.js,.vue ."
     },
     "dependencies": {
         "@headlessui/vue": "^1.7.4",
         "material-icons": "^1.12.1",
         "ofetch": "^1.0.0",
+        "vite-plugin-ssr": "^0.4.51",
         "vue": "^3.2.41"
     },
     "devDependencies": {
