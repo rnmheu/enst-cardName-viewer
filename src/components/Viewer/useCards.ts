@@ -17,6 +17,9 @@ export function useCards() {
         }).then((json) => (data.value = formatCards(json)))
     }
 
+    /**
+     * CharacterのIDでカードリストをフィルタリングします。
+     */
     function filterByCharacterId(characterId: number) {
         if (data.value !== undefined) {
             if (characterId === 0) {
@@ -29,6 +32,10 @@ export function useCards() {
             }
         }
     }
+
+    /**
+     * ScoutあるいはEvent内に保持されているカードIDでカードリストをフィルタリングします。
+     */
     function filterByCardId(cardIds: number[]) {
         if (data.value === undefined) {
             return
@@ -44,49 +51,46 @@ export function useCards() {
     }
 }
 
+/**
+ * APIから取得したJSONを、アプリ内で使うプロパティのみの状態にフォーマットします。
+ */
 function formatCards(cards: CardAPI[]) {
-    let list = []
-
-    for (let i = 0; i < cards.length; i++) {
-        if (cards[i].name === undefined) {
-            // カードのデータが存在していないのでスキップ
-            continue
-        }
-
-        list[list.length] = formatData(cards[i])
-    }
-    return list
+    const newCards = cards
+        .filter((card) => card.name !== undefined)
+        .map((card) => {
+            return {
+                id: card.id,
+                rarity: card.rarity,
+                character_id: card.character_id,
+                type: convertToTypeStr(card.type),
+                title: card.title,
+                name: card.name,
+                skills: {
+                    center: {
+                        name: card.skills?.center?.name,
+                    },
+                    live: {
+                        name: card.skills?.live?.name,
+                    },
+                    support: {
+                        name: card.skills?.support?.name,
+                    },
+                },
+                obtain: {
+                    name: card.obtain?.name,
+                    id: card.obtain?.id,
+                    type: card.obtain?.type,
+                    subType: card.obtain?.subType,
+                },
+            }
+        })
+    return newCards
 }
 
-function formatData(card: CardAPI): Card {
-    const formattedData = {
-        id: card.id,
-        rarity: card.rarity,
-        character_id: card.character_id,
-        type: convertToTypeStr(card.type),
-        title: card.title,
-        name: card.name,
-        skills: {
-            center: {
-                name: card.skills?.center?.name,
-            },
-            live: {
-                name: card.skills?.live?.name,
-            },
-            support: {
-                name: card.skills?.support?.name,
-            },
-        },
-        obtain: {
-            name: card.obtain?.name,
-            id: card.obtain?.id,
-            type: card.obtain?.type,
-            subType: card.obtain?.subType,
-        },
-    }
-    return formattedData
-}
-
+/**
+ * @param type CardAPI.typeの数値を入力します。
+ * @return カードタイプの文字列を返します。
+ */
 function convertToTypeStr(type: number): string {
     switch (type) {
         case 1:
