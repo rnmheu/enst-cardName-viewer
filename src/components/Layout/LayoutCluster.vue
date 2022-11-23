@@ -4,7 +4,7 @@ interface Props {
     large?: boolean
     reverse?: boolean
     alignItems?: 'top' | 'center' | 'bottom'
-    justifyContent?: 'space-between' | 'left' | 'right'
+    justifyContent?: 'center' | 'space-between' | 'left' | 'right'
 }
 defineProps<Props>()
 </script>
@@ -17,8 +17,8 @@ defineProps<Props>()
                 small: $props.small,
                 large: $props.large,
                 reverse: $props.reverse,
-                alignItems: $props.alignItems !== undefined,
-                justifyContent: $props.justifyContent !== undefined,
+                alignItems: $props.alignItems,
+                justifyContent: $props.justifyContent,
             },
         ]"
     >
@@ -32,6 +32,7 @@ defineProps<Props>()
     justify-content: normal;
     flex-wrap: wrap;
     gap: var(--cluster-space, 1rem);
+    width: 100%;
 
     margin-right: 0;
     margin-left: 0;

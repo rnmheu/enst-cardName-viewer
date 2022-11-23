@@ -81,7 +81,7 @@ const onSelect = (selected: { id: number; label: string }) => {
 
 <style lang="scss">
 .selectBox {
-    width: min(20rem, 95vw);
+    width: 100%;
 }
 .selectBoxButton {
     display: flex;
@@ -94,8 +94,7 @@ const onSelect = (selected: { id: number; label: string }) => {
     font-weight: 700;
 
     text-align: left;
-
-    width: 100%;
+    width: inherit;
 
     color: var(--text-mid-emphasis);
 
@@ -110,7 +109,7 @@ const onSelect = (selected: { id: number; label: string }) => {
 
     overflow-y: scroll;
 
-    width: inherit;
+    width: auto;
     height: 16em;
 
     padding-left: 0;

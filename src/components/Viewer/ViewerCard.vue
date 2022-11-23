@@ -38,6 +38,14 @@ defineProps<Props>()
             </div>
         </LayoutStack>
         <div class="card-box detail">
+            <span class="obtain">{{ card.name }}</span>
+            <span
+                v-if="
+                    card.obtain !== undefined && card.obtain.name !== undefined
+                "
+            >
+                -
+            </span>
             <span
                 v-if="
                     card.obtain !== undefined && card.obtain.name !== undefined
@@ -45,7 +53,6 @@ defineProps<Props>()
                 class="obtain"
                 >{{ card.obtain.name }}</span
             >
-            <span v-else class="obtain">- - -</span>
         </div>
     </div>
 </template>
@@ -73,14 +80,13 @@ defineProps<Props>()
         left: 10%;
         top: 0;
         display: block;
+
         width: 80%;
         height: 100%;
-        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.16); /* filterが効かない場合黒い影をつける */
         z-index: -1;
 
         background-image: var(--border-color);
         filter: blur(10px);
-        box-shadow: none;
     }
 }
 
@@ -112,6 +118,7 @@ defineProps<Props>()
     border-radius: 0 0 var(--border-radius--card) var(--border-radius--card);
     background-color: var(--white-alpha-40);
     text-align: center;
+    word-break: keep-all;
 
     .obtain {
         font-size: var(--fontSize-small);
@@ -127,6 +134,18 @@ defineProps<Props>()
         font-weight: $font-weight--bold;
         font-family: var(--fontFamily--emphasis);
         text-align: center;
+        padding-bottom: var(--title-bottom--border-padding);
+        --title-bottom--border-padding: 1.2rem;
+
+        &::after {
+            content: ('');
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            transform: translateY(var(--title-bottom--border-padding));
+            border-bottom: 1px solid;
+            border-color: var(--white-alpha-80);
+        }
     }
 
     .skills {

@@ -15,6 +15,7 @@ defineProps<Props>()
 <style lang="scss">
 .grid {
     display: grid;
+    width: inherit;
     gap: var(--gap-space, 1rem);
     --minimum: 20em;
 
