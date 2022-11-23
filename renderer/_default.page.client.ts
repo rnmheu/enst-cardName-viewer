@@ -4,13 +4,16 @@ import type { PageContextClient } from './types'
 export { render }
 
 async function render(pageContext: PageContextClient) {
-    if (import.meta.env.MODE === 'development') {
-        import('@/mocks/browser').then((module) => {
-            module.worker.start({
-                onUnhandledRequest: 'bypass',
-            })
-        })
+    setup().then(() => {
+        const app = createApp(pageContext)
+        app.mount('#app')
+    })
+}
+
+async function setup() {
+    if (import.meta.env.DEV) {
+        const worker = await import('@/mocks/browser')
+        return worker.worker.start()
     }
-    const app = createApp(pageContext)
-    app.mount('#app')
+    return Promise.resolve()
 }
